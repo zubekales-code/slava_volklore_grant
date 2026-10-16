@@ -1,0 +1,510 @@
+# Zdroje pro grantového agenta Sláva Volklore (verze 2, podle pitch decku a Business Model Canvas)
+# priority: 1 = top, 2 = vhodné, 3 = okrajové (agent je čte, ale v e-mailu je zmíní jen při vysoké shodě)
+# verified: true = adresa potvrzena 15. 10. 2026; false = ověří diagnose.py z GitHubu
+
+sources:
+  - id: c01
+    name: "EIT Culture & Creativity"
+    category: C
+    priority: 1
+    url: "https://eit-culture-creativity.eu"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Móda je jedna z jejich tří prioritních oblastí (vedle architektury a audiovize). Výzvy na inovace, vzdělávání i akceleraci."
+    angle: "Podat vzdělávací program pro designéry nebo pilot platformy jako inovační projekt v módě."
+
+  - id: c02
+    name: "Culture Moves Europe"
+    category: C
+    priority: 1
+    url: "https://culture.ec.europa.eu"
+    cadence: "měsíčně"
+    verified: true
+    enabled: true
+    why: "Mobilita s jedním zahraničním partnerem, jednoduchá žádost; výzva do 30. 4. 2027 s měsíčními uzávěrkami."
+    angle: "Výjezdy Terezy, Viktorie a designérů k partnerům jako FashionClash nebo Center Rog."
+
+  - id: a03
+    name: "HMP – granty v kultuře a umění"
+    category: A
+    priority: 1
+    url: "https://kultura.praha.eu"
+    cadence: "1× ročně"
+    verified: true
+    enabled: true
+    why: "Jednoleté i víceleté granty včetně vizuálního umění a designu, eventů a festivalů."
+    angle: "Pop-upy, fashion shows a komunitní program jako víceletý projekt v Praze."
+
+  - id: a04
+    name: "Portál finanční podpory HMP"
+    category: A
+    priority: 1
+    url: "https://granty.praha.eu"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Všechny dotační programy města; nově i program na inovační akce 2027."
+    angle: "Konference nebo vzdělávací akce o módě a kreativním průmyslu jako inovační akce."
+
+  - id: a05
+    name: "Kreativní Praha"
+    category: A
+    priority: 1
+    url: "https://kreativnipraha.eu"
+    cadence: "průběžně"
+    verified: false
+    enabled: true
+    why: "Městský ústav pro kreativní průmysly, ve vašem canvasu veden jako klíčový partner."
+    angle: "Sledovat jejich výzvy, open cally a spolupráce, jsou přímo pro váš obor."
+
+  - id: a06
+    name: "Kancelář Kreativní Evropa"
+    category: A
+    priority: 1
+    url: "https://www.kreativnievropa.cz"
+    cadence: "měsíčně"
+    verified: true
+    enabled: true
+    why: "Český desk KE: výzvy, partner search, konzultace zdarma."
+    angle: "Konzultace malého projektu spolupráce s FashionClash, Vorn hub nebo Center Rog."
+
+  - id: a07
+    name: "Ministerstvo kultury – dotační řízení"
+    category: A
+    priority: 1
+    url: "https://mk.gov.cz"
+    cadence: "2 kola ročně"
+    verified: true
+    enabled: true
+    why: "Programy Kulturní aktivity a podpora aktivit do zahraničí; MK máte v canvasu jako instituci."
+    angle: "Prezentace českých designérů v zahraničí, eventy a vzdělávání."
+
+  - id: a08
+    name: "CzechTrade – podpora designu"
+    category: A
+    priority: 1
+    url: "https://www.czechtrade.cz"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Program na zapojení designérů do firem a prezentaci českého designu."
+    angle: "Matchmaking designérů s firmami je přímo váš pilíř Zastoupení."
+
+  - id: a09
+    name: "CzechDesign"
+    category: A
+    priority: 1
+    url: "https://www.czechdesign.cz"
+    cadence: "týdně"
+    verified: false
+    enabled: true
+    why: "Oborový web a newsletter s výzvami, soutěžemi a open cally pro designéry."
+    angle: "Zdroj výzev pro komunitu i pro vás jako organizaci."
+
+  - id: d10
+    name: "On the Move"
+    category: D
+    priority: 1
+    url: "https://on-the-move.org"
+    cadence: "měsíčně"
+    verified: true
+    enabled: true
+    why: "Síť pro kulturní mobilitu; výzvy, rezidence a open cally partnerů z celé Evropy."
+    angle: "Hledat projekty, kam se přidat jako český partner z módy."
+
+  - id: d11
+    name: "Partner search kanceláří Kreativní Evropy"
+    category: D
+    priority: 1
+    url: "https://creative-europe.culture.gr"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Zveřejněné formuláře organizací, které hledají partnery do projektů KE."
+    angle: "Odpovídat na hledání partnerů v módě, designu a řemesle."
+
+  - id: d12
+    name: "FashionClash (Nizozemsko)"
+    category: D
+    priority: 1
+    url: "https://www.fashionclash.nl"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Partner z vašeho canvasu; festival a platforma pro nezávislé designéry."
+    angle: "Sledovat jejich open cally a projekty KE, kam se dá přidat jako partner."
+
+  - id: d13
+    name: "Fashion Revolution"
+    category: D
+    priority: 1
+    url: "https://www.fashionrevolution.org"
+    cadence: "měsíčně"
+    verified: false
+    enabled: true
+    why: "Partner z canvasu; mezinárodní hnutí za udržitelnou módu."
+    angle: "Udržitelnost a cirkulárka, společné kampaně a projekty."
+
+  - id: d14
+    name: "Center Rog (Lublaň)"
+    category: D
+    priority: 1
+    url: "https://www.center-rog.si"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Partner z canvasu; produkční centrum se sdílenými dílnami, model pro váš budoucí hub."
+    angle: "Partnerství v projektech o kreativních centrech a sdílených dílnách."
+
+  - id: a15
+    name: "Praha 8 – dotace a granty"
+    category: A
+    priority: 2
+    url: "https://www.praha8.cz"
+    cadence: "1× ročně"
+    verified: false
+    enabled: true
+    why: "Dotace městské části na kulturu a spolky."
+    angle: "Lokální akce a komunita v Praze 8."
+
+  - id: a16
+    name: "Praha 4 – dotace a granty"
+    category: A
+    priority: 2
+    url: "https://praha4.cz"
+    cadence: "1× ročně"
+    verified: true
+    enabled: false
+    why: "Dotace městské části, zapnout později podle vás."
+    angle: "Jako Praha 8."
+
+  - id: a17
+    name: "Státní fond kultury ČR"
+    category: A
+    priority: 2
+    url: "https://mk.gov.cz"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Kulturní projekty a propagace české kultury v zahraničí."
+    angle: "Výstava nebo prezentace české módy."
+
+  - id: a18
+    name: "TA ČR – SIGMA, dílčí cíl 3"
+    category: A
+    priority: 2
+    url: "https://tacr.gov.cz"
+    cadence: "1× ročně"
+    verified: true
+    enabled: true
+    why: "Inovace v humanitních oborech a umění; vyžaduje výzkumného partnera."
+    angle: "Společně s UTB Zlín nebo UMPRUM (oba ve vašem canvasu) výzkum oborové platformy."
+
+  - id: a19
+    name: "API – OP TAK (Marketing, Poradenství)"
+    category: A
+    priority: 2
+    url: "https://apiagentura.gov.cz"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Výzvy pro malé a střední podniky."
+    angle: "Jen pokud bude existovat obchodní entita (agentura); pro spolek ne."
+
+  - id: a20
+    name: "Dům zahraniční spolupráce (Erasmus+)"
+    category: A
+    priority: 2
+    url: "https://www.dzs.cz"
+    cadence: "1–2× ročně"
+    verified: true
+    enabled: true
+    why: "Erasmus+ včetně malých partnerství KA210."
+    angle: "Workshopy a vzdělávání designérů s jedním až dvěma zahraničními partnery."
+
+  - id: a21
+    name: "Česká centra"
+    category: A
+    priority: 2
+    url: "https://www.czechcentres.cz"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Prezentace české kultury v zahraničí, sítě center po Evropě."
+    angle: "Showcase českých designérů v zahraničí přes místní centrum."
+
+  - id: a22
+    name: "Fondy EHP a Norska"
+    category: A
+    priority: 2
+    url: "https://www.eeagrants.cz"
+    cadence: "dle výzev"
+    verified: true
+    enabled: true
+    why: "Nové období 2021–2028, kultura mezi prioritami."
+    angle: "Sledovat vyhlášení programu Kultura, včetně bilaterálních partnerství s Norskem."
+
+  - id: a23
+    name: "Česko-německý fond budoucnosti"
+    category: A
+    priority: 2
+    url: "https://www.fondbudoucnosti.cz"
+    cadence: "čtvrtletně"
+    verified: true
+    enabled: true
+    why: "Česko-německé projekty v kultuře, čtvrtletní uzávěrky."
+    angle: "Spolupráce s Vorn hubem nebo německými designéry."
+
+  - id: c24
+    name: "Mezinárodní visegrádský fond"
+    category: C
+    priority: 2
+    url: "https://www.visegradfund.org"
+    cadence: "3× ročně"
+    verified: true
+    enabled: true
+    why: "Granty 25–35 tis. EUR, partneři ze tří zemí V4."
+    angle: "Středoevropská platforma nezávislé módy s partnery z Polska a Slovenska."
+
+  - id: c25
+    name: "Kreativní Evropa – výzvy Komise"
+    category: C
+    priority: 2
+    url: "https://culture.ec.europa.eu"
+    cadence: "1× ročně"
+    verified: true
+    enabled: true
+    why: "Malé projekty spolupráce, Innovation Lab."
+    angle: "Až s partnerem, zatím spíš jako partner (kategorie D)."
+
+  - id: c26
+    name: "New European Bauhaus"
+    category: C
+    priority: 2
+    url: "https://new-european-bauhaus.europa.eu"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Udržitelnost, design, veřejný prostor; ceny a menší výzvy."
+    angle: "Cirkulární móda a pop-upy ve veřejném prostoru."
+
+  - id: b27
+    name: "Nadace Partnerství"
+    category: B
+    priority: 2
+    url: "https://www.nadacepartnerstvi.cz/granty"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Udržitelnost a cirkulární ekonomika."
+    angle: "Cirkulární a udržitelná móda, upcyklace."
+
+  - id: b28
+    name: "ERSTE Stiftung"
+    category: B
+    priority: 2
+    url: "https://www.erstestiftung.org"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Kultura a občanská společnost ve střední a východní Evropě."
+    angle: "Komunitní a vzdělávací rozměr platformy."
+
+  - id: b29
+    name: "Allianz Foundation"
+    category: B
+    priority: 2
+    url: "https://allianzfoundation.org"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Kultura a udržitelnost v Evropě."
+    angle: "Udržitelná móda jako kulturní téma."
+
+  - id: b30
+    name: "European Cultural Foundation"
+    category: B
+    priority: 2
+    url: "https://culturalfoundation.eu"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Granty pro kulturní spolupráci a mobilitu."
+    angle: "Mobilita a sdílení zkušeností s partnery."
+
+  - id: b31
+    name: "Nadace Via"
+    category: B
+    priority: 2
+    url: "https://www.nadacevia.cz"
+    cadence: "průběžně"
+    verified: true
+    enabled: true
+    why: "Komunitní projekty a místní rozvoj, granty kolem 20–100 tis. Kč."
+    angle: "Komunitní akce kolem budoucího hubu."
+
+  - id: b32
+    name: "Fórum dárců"
+    category: B
+    priority: 2
+    url: "https://www.donorsforum.cz"
+    cadence: "měsíčně"
+    verified: false
+    enabled: true
+    why: "Přehled výzev nadací."
+    angle: "Agregátor, agent z něj jen vybírá."
+
+  - id: d33
+    name: "Trans Europe Halles"
+    category: D
+    priority: 2
+    url: "https://teh.net"
+    cadence: "měsíčně"
+    verified: false
+    enabled: true
+    why: "Síť nezávislých kulturních center."
+    angle: "Inspirace a partnerství pro budoucí fyzický hub."
+
+  - id: d34
+    name: "Culture Action Europe"
+    category: D
+    priority: 2
+    url: "https://cultureactioneurope.org"
+    cadence: "měsíčně"
+    verified: false
+    enabled: true
+    why: "Evropská kulturní síť s přehledem výzev."
+    angle: "Projekty hledající partnery."
+
+  - id: d35
+    name: "Funding & Tenders – Partner Search"
+    category: D
+    priority: 2
+    url: "https://ec.europa.eu/info/funding-tenders/opportunities/portal"
+    cadence: "průběžně"
+    verified: false
+    enabled: true
+    why: "Organizace hledající partnery k výzvám EU."
+    angle: "Filtrovat na módu, textil a kreativní průmysl."
+
+  - id: c36
+    name: "BusinessInfo.cz – dotace"
+    category: C
+    priority: 2
+    url: "https://www.businessinfo.cz"
+    cadence: "denně"
+    verified: true
+    enabled: true
+    why: "Státní agregátor zpráv o dotacích včetně KKO."
+    angle: "Agregátor, agent z něj jen vybírá."
+
+  - id: a37
+    name: "OP Jan Amos Komenský (MŠMT)"
+    category: A
+    priority: 3
+    url: "https://opjak.cz"
+    cadence: "průběžně"
+    verified: false
+    enabled: true
+    why: "Výzvy ve vzdělávání a výzkumu, převážně pro školy."
+    angle: "Jen ve spolupráci s univerzitou."
+
+  - id: a38
+    name: "DotaceEU.cz (MMR)"
+    category: A
+    priority: 3
+    url: "https://dotaceeu.cz"
+    cadence: "denně"
+    verified: false
+    enabled: true
+    why: "Přehled všech operačních programů."
+    angle: "Agregátor, hodně šumu."
+
+  - id: a39
+    name: "Institut umění – Divadelní ústav"
+    category: A
+    priority: 3
+    url: "https://www.idu.cz"
+    cadence: "průběžně"
+    verified: false
+    enabled: true
+    why: "Mobilita hlavně ve scénických umění."
+    angle: "Jen při přesahu do performance a kostýmu."
+
+  - id: b40
+    name: "Nadace OSF"
+    category: B
+    priority: 3
+    url: "https://osf.cz"
+    cadence: "dle výzev"
+    verified: true
+    enabled: true
+    why: "Občanská společnost a demokracie."
+    angle: "Spíš výjimečně."
+
+  - id: b41
+    name: "Nadace ČEZ – Podpora regionů"
+    category: B
+    priority: 3
+    url: "https://www.nadacecez.cz"
+    cadence: "celoročně"
+    verified: true
+    enabled: true
+    why: "Celoročně, komunitní a kulturní akce."
+    angle: "Menší komunitní akce."
+
+  - id: b42
+    name: "Nadace Vodafone"
+    category: B
+    priority: 3
+    url: "https://www.nadacevodafone.cz"
+    cadence: "dle výzev"
+    verified: false
+    enabled: true
+    why: "Technologie pro neziskový sektor."
+    angle: "Digitální platforma, pokud bude spolek."
+
+  - id: c43
+    name: "EU Funding & Tenders Portal"
+    category: C
+    priority: 3
+    url: "https://ec.europa.eu/info/funding-tenders/opportunities/portal"
+    cadence: "denně"
+    verified: false
+    enabled: true
+    why: "Všechny výzvy EU, veřejné API."
+    angle: "Pro vás hlavně jako zdroj pro kategorii D."
+
+  - id: c44
+    name: "fundsforNGOs"
+    category: C
+    priority: 3
+    url: "https://www2.fundsforngos.org"
+    cadence: "denně"
+    verified: true
+    enabled: true
+    why: "Mezinárodní agregátor výzev."
+    angle: "Doplněk, hodně šumu."
+
+  - id: d45
+    name: "SALTO OTLAS"
+    category: D
+    priority: 3
+    url: "https://www.salto-youth.net"
+    cadence: "průběžně"
+    verified: false
+    enabled: true
+    why: "Partneři pro Erasmus+ Mládež."
+    angle: "Jen pokud budou cílovkou mladí do 30 let."
+
+  - id: d46
+    name: "IFACCA – novinky"
+    category: D
+    priority: 3
+    url: "https://ifacca.org"
+    cadence: "týdně"
+    verified: true
+    enabled: true
+    why: "Mezinárodní přehled kulturních výzev."
+    angle: "Agregátor."

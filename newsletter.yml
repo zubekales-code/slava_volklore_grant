@@ -1,0 +1,53 @@
+name: Grantový agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Co spustit"
+        required: true
+        default: diagnostics
+        type: choice
+        options:
+          - diagnostics          # klíče, OpenAI, Supabase, e-mail i všechny zdroje
+          - diagnostics-services # jen klíče a služby (rychlé)
+          - diagnostics-sources  # jen zdroje
+  # Plán se zapne až po prvním úspěšném ručním běhu (fáze 3).
+  # schedule:
+  #   - cron: "30 5 * * *"   # 7:30 v létě (UTC+2)
+  #   - cron: "30 6 * * *"   # 7:30 v zimě (UTC+1); skript sám pozná, který běh platí
+
+concurrency:
+  group: grant-agent
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: src
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Instalace knihoven
+        run: pip install -r ../requirements.txt
+      - name: Diagnostika
+        if: startsWith(github.event.inputs.mode, 'diagnostics')
+        run: |
+          case "${{ github.event.inputs.mode }}" in
+            diagnostics-services) python diagnose.py services ;;
+            diagnostics-sources)  python diagnose.py sources ;;
+            *)                    python diagnose.py all ;;
+          esac

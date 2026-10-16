@@ -1,0 +1,40 @@
+# Nastavení agenta. Měnit se dá přímo na GitHubu (ikonka tužky), bez programování.
+
+organization:
+  name: "Sláva Volklore"
+  # Současná a možné budoucí právní formy žadatele.
+  # Výzvy jen pro jiné formy agent nezahodí, ale dá je do sekce „Až s jinou formou“.
+  applicant_forms_now: ["OSVČ", "fyzická osoba podnikající"]
+  applicant_forms_future: ["s.r.o.", "spolek"]
+  region: "Praha"
+
+schedule:
+  timezone: "Europe/Prague"
+  send_hour: 7              # odesílá se v hodinu 7:xx pražského času
+  every_n_days: 2           # 1 = denně, 2 = každý druhý den
+  anchor_date: "2026-10-19" # od tohoto dne se počítá „každý druhý“
+  lookback_hours: 54        # jak daleko zpět sbírat (2 dny + rezerva)
+
+email:
+  to: ["slavavolkloreagent@gmail.com"]
+  from_name: "Grantový agent Sláva Volklore"
+  from_address: "onboarding@resend.dev"   # bez vlastní domény; po ověření domény změnit
+  subject_prefix: "Granty a výzvy"
+
+models:
+  cheap: "gpt-5-mini"       # extrakce a hodnocení
+  strong: "gpt-5"           # psaní souhrnu
+  max_tokens_cheap: 8000
+  max_tokens_strong: 16000
+
+selection:
+  min_score: 6              # od kolika bodů z 10 jde výzva do e-mailu
+  max_per_source: 3
+  max_items_total: 20
+  deadline_soon_days: 30
+  deadline_urgent_days: 7
+
+collect:
+  priorities: [1, 2, 3]     # které priority zdrojů číst
+  request_timeout: 25
+  use_reader_fallback: true # při blokaci zkusit čtečku r.jina.ai
