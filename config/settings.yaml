@@ -40,7 +40,7 @@ selection:
 
 finance:
   # Kolik vlastních peněz firma reálně zvládne vložit nebo předfinancovat. UPRAVTE podle skutečnosti.
-  free_cash_czk: 100000
+  free_cash_czk: 150000
 
 collect:
   priorities: [1, 2, 3]     # které priority zdrojů číst
