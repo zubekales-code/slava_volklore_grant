@@ -3,8 +3,10 @@ import logging
 import time
 
 import requests
+import urllib3
 
 log = logging.getLogger("fetch")
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  # jen pro zdroje s výslovným verify_ssl: false
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -14,12 +16,12 @@ HEADERS = {
 }
 
 
-def fetch(url: str, timeout: int = 25, reader_fallback: bool = True) -> dict:
+def fetch(url: str, timeout: int = 25, reader_fallback: bool = True, verify_ssl: bool = True) -> dict:
     """Vrátí {ok, status, via, text, seconds, error}."""
     t0 = time.time()
     result = {"ok": False, "status": None, "via": "direct", "text": "", "seconds": 0.0, "error": None}
     try:
-        r = requests.get(url, headers=HEADERS, timeout=timeout, allow_redirects=True)
+        r = requests.get(url, headers=HEADERS, timeout=timeout, allow_redirects=True, verify=verify_ssl)
         result["status"] = r.status_code
         if r.status_code < 400 and len(r.text) > 500:
             result.update(ok=True, text=r.text)
