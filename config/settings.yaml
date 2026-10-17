@@ -26,15 +26,27 @@ models:
   strong: "gpt-5"           # psaní souhrnu
   max_tokens_cheap: 8000
   max_tokens_strong: 16000
+  effort_cheap: "low"       # kolik „přemýšlí“ levný model (minimal/low/medium/high); méně = levněji
+  effort_strong: "medium"
 
 selection:
-  min_score: 6              # od kolika bodů z 10 jde výzva do e-mailu
+  min_score: 6              # od kolika bodů z 10 jde výzva do e-mailu (fit, adapt)
+  min_score_later: 7        # pro výzvy „až později“ (jiná forma, kapitál) přísněji, ať nejsou šum
   max_per_source: 3
   max_items_total: 20
+  max_later: 5              # nejvýš tolik výzev „až později“ v jednom e-mailu
   deadline_soon_days: 30
   deadline_urgent_days: 7
+
+finance:
+  # Kolik vlastních peněz firma reálně zvládne vložit nebo předfinancovat. UPRAVTE podle skutečnosti.
+  free_cash_czk: 100000
 
 collect:
   priorities: [1, 2, 3]     # které priority zdrojů číst
   request_timeout: 25
   use_reader_fallback: true # při blokaci zkusit čtečku r.jina.ai
+  max_chars_per_source: 14000   # kolik textu z jedné stránky jde k analýze
+  max_grants_per_page: 8
+  workers_fetch: 8
+  workers_llm: 5
