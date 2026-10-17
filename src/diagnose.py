@@ -107,7 +107,7 @@ def check_sources(settings):
     fallback = settings["collect"]["use_reader_fallback"]
     print(f"\nZdroje ({len(sources)}):", flush=True)
     for s in sources:
-        r = fetch(s["url"], timeout=timeout, reader_fallback=fallback)
+        r = fetch(s["url"], timeout=timeout, reader_fallback=fallback, verify_ssl=s.get("verify_ssl", True))
         label = f'{s["id"]} {s["name"]}'
         if r["ok"] and r["via"] == "direct":
             report(OK, "zdroj", f"{label} – přímo, {len(r['text'])//1000} kB, {r['seconds']} s")
