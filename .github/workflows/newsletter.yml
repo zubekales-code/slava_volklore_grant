@@ -14,10 +14,11 @@ on:
           - diagnostics          # klíče, OpenAI, Supabase, e-mail i všechny zdroje
           - diagnostics-services # jen klíče a služby (rychlé)
           - diagnostics-sources  # jen zdroje
-  # Plán se zapne až po prvním úspěšném ručním běhu (fáze 3).
-  # schedule:
-  #   - cron: "30 5 * * *"   # 7:30 v létě (UTC+2)
-  #   - cron: "30 6 * * *"   # 7:30 v zimě (UTC+1); skript sám pozná, který běh platí
+  # Plán: každý den dva časy, skript sám pustí jen správný den (viz schedule v config/settings.yaml)
+  # a jen hodinu 7 v Praze, takže letní a zimní čas se řeší sám.
+  schedule:
+    - cron: "30 5 * * *"   # 7:30 v létě (UTC+2)
+    - cron: "30 6 * * *"   # 7:30 v zimě (UTC+1)
 
 concurrency:
   group: grant-agent
