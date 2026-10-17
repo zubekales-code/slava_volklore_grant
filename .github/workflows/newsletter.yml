@@ -6,9 +6,11 @@ on:
       mode:
         description: "Co spustit"
         required: true
-        default: diagnostics
+        default: run-dry
         type: choice
         options:
+          - run-dry              # celý běh, e-mail se jen vypíše do logu (nic se neposílá)
+          - run-send             # celý běh a e-mail se pošle
           - diagnostics          # klíče, OpenAI, Supabase, e-mail i všechny zdroje
           - diagnostics-services # jen klíče a služby (rychlé)
           - diagnostics-sources  # jen zdroje
@@ -51,3 +53,11 @@ jobs:
             diagnostics-sources)  python diagnose.py sources ;;
             *)                    python diagnose.py all ;;
           esac
+      - name: Běh agenta
+        if: startsWith(github.event.inputs.mode, 'run-') || github.event_name == 'schedule'
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python main.py scheduled
+          else
+            python main.py "${{ github.event.inputs.mode }}"
+          fi
