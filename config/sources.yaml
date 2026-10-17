@@ -30,6 +30,7 @@ sources:
     category: A
     priority: 1
     url: "https://kultura.praha.eu"
+    verify_ssl: false   # web má vadný řetězec certifikátů; čteme jen veřejný text bez přihlášení
     cadence: "1× ročně"
     verified: true
     enabled: true
