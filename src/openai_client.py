@@ -18,7 +18,7 @@ def client() -> OpenAI:
     return _client
 
 
-def chat(model: str, system: str, user: str, max_tokens: int, json_mode: bool = False) -> str:
+def chat(model: str, system: str, user: str, max_tokens: int, json_mode: bool = False, effort: str | None = None) -> str:
     """Vrátí text odpovědi. Při prázdné odpovědi vyhodí chybu místo tichého selhání."""
     kwargs = {
         "model": model,
@@ -27,6 +27,8 @@ def chat(model: str, system: str, user: str, max_tokens: int, json_mode: bool = 
     }
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
+    if effort:
+        kwargs["extra_body"] = {"reasoning_effort": effort}  # přes extra_body funguje s každou verzí knihovny
     resp = client().chat.completions.create(**kwargs)
     choice = resp.choices[0]
     text = (choice.message.content or "").strip()
@@ -41,8 +43,8 @@ def chat(model: str, system: str, user: str, max_tokens: int, json_mode: bool = 
     return text
 
 
-def chat_json(model: str, system: str, user: str, max_tokens: int) -> dict:
-    text = chat(model, system, user, max_tokens, json_mode=True)
+def chat_json(model: str, system: str, user: str, max_tokens: int, effort: str | None = None) -> dict:
+    text = chat(model, system, user, max_tokens, json_mode=True, effort=effort)
     try:
         return json.loads(text)
     except json.JSONDecodeError:
