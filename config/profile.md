@@ -24,7 +24,7 @@ Kreativní Praha, hl. m. Praha (HMP), Prague City Tourism, MK ČR, UMPRUM, FAMU,
 móda, oděvy, textil, design, kreativní a kulturní průmysly, udržitelná móda a cirkularita, vzdělávání kreativců, podpora začínajících designérů, mobilita a rezidence kreativců, internacionalizace, propojení kreativců s byznysem, eventy a pop-upy, fashion film a audiovize, komunitní a sdílená zázemí (dílny, hub), turismus a městská kultura Prahy.
 
 ## Právní forma (může se měnit)
-Teď OSVČ (fyzická osoba podnikající). Později může vzniknout s.r.o. nebo spolek. Formu nepovažujeme za důvod výzvu zahodit. Pokud výzva vyžaduje jinou formu, agent ji ukáže s tím, co by se muselo změnit (např. založit spolek, jít jako partner někoho, kdo může podat).
+Žadatelem je dnes OSVČ (fyzická osoba podnikající) a také spolek. Výzvy pro spolky a NNO tedy dnes podat jdou. Později může přibýt s.r.o. Výzvy jen pro jiné formy (s.r.o., škola, obec, instituce) agent nezahazuje, ale ukáže je s tím, co by se muselo změnit (založit s.r.o., jít jako partner někoho, kdo může podat).
 
 ## Finanční realita (důležité)
 Firma nemá vlastní kapitál v řádu stovek tisíc korun. Nemůže si dovolit:
