@@ -16,11 +16,11 @@ class Storage:
             url = url[: -len("/rest/v1")]
         self.base = f"{url}/rest/v1"
         key = secret("SUPABASE_KEY")
-        self.headers = {
-            "apikey": key,
-            "Authorization": f"Bearer {key}",
-            "Content-Type": "application/json",
-        }
+        self.headers = {"apikey": key, "Content-Type": "application/json"}
+        # Nové klíče (sb_secret_...) nejsou JWT a do hlavičky Authorization nepatří.
+        # Starý typ klíče (JWT, začíná eyJ) ji potřebuje.
+        if not key.startswith("sb_"):
+            self.headers["Authorization"] = f"Bearer {key}"
 
     # ---------- čtení
     def select(self, table: str, params: dict | None = None) -> list[dict]:
