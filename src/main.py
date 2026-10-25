@@ -36,11 +36,18 @@ def run(mode: str) -> None:
     today = now.date()
 
     if mode == "scheduled":
+        # Udržovací dotaz při každém plánovaném běhu: Supabase (free plán) projekt
+        # po týdnu bez aktivity pozastaví a pak agent nemá kam sáhnout.
+        st = Storage()
+        try:
+            alive, info = st.ping("runs")
+            print(f"Databáze: {'v pořádku' if alive else 'odpověď ' + info[:80]}")
+        except Exception as e:
+            print(f"Databáze nedostupná: {type(e).__name__} (projekt v Supabase je možná pozastavený)")
         ok, why = should_run_now(settings, now)
         print(f"Plán: {why}")
         if not ok:
             return
-        st = Storage()
         if already_sent_today(st, now):
             print("Plán: dnes už se e-mail poslal, tenhle běh se přeskakuje")
             return
