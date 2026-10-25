@@ -10,7 +10,8 @@ organization:
 
 schedule:
   timezone: "Europe/Prague"
-  send_hour: 7              # odesílá se v hodinu 7:xx pražského času
+  send_hour: 7              # nejdřívější hodina odeslání (pražský čas)
+  send_until_hour: 11       # nejpozdější hodina; GitHub plánované běhy zpožďuje, proto okno 7:00–11:59
   every_n_days: 7           # 1 = denně, 2 = každý druhý den, 7 = jednou týdně
   anchor_date: "2026-10-19" # pondělí; od tohoto dne se počítá každý N-tý den (týdně = vždy pondělí)
   lookback_hours: 192       # jak daleko zpět sbírat (týden + rezerva)

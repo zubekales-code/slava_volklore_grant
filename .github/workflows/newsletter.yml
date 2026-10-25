@@ -14,11 +14,14 @@ on:
           - diagnostics          # klíče, OpenAI, Supabase, e-mail i všechny zdroje
           - diagnostics-services # jen klíče a služby (rychlé)
           - diagnostics-sources  # jen zdroje
-  # Plán: každý den dva časy, skript sám pustí jen správný den (viz schedule v config/settings.yaml)
-  # a jen hodinu 7 v Praze, takže letní a zimní čas se řeší sám.
+  # Plán: každý den čtyři pokusy (GitHub je občas o hodiny zpozdí). Skript sám pustí jen
+  # správný den a okno 7:00–11:59 v Praze (viz schedule v config/settings.yaml) a pošle
+  # nejvýš jeden e-mail za den. Letní a zimní čas se řeší sám.
   schedule:
     - cron: "30 5 * * *"   # 7:30 v létě (UTC+2)
     - cron: "30 6 * * *"   # 7:30 v zimě (UTC+1)
+    - cron: "30 7 * * *"   # záloha
+    - cron: "30 8 * * *"   # záloha
 
 concurrency:
   group: grant-agent

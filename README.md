@@ -29,4 +29,4 @@ GitHub → **Actions** → **Grantový agent** → **Run workflow** → vybrat r
 
 ## Čas
 
-Cron na GitHubu běží v UTC. Jsou nastavené dva běhy (5:30 a 6:30 UTC) a skript sám pustí jen ten, který odpovídá 7:30 v Praze. Přepínat letní a zimní čas proto není potřeba.
+Cron na GitHubu běží v UTC a GitHub plánované běhy často zpožďuje, někdy i o hodiny. Proto jsou nastavené čtyři pokusy (5:30, 6:30, 7:30 a 8:30 UTC). Skript pošle e-mail při prvním z nich, který spadne do okna 7:00–11:59 v Praze (`send_hour` až `send_until_hour`), a další ten den přeskočí, protože v tabulce `runs` vidí, že už se poslalo. Přepínat letní a zimní čas není potřeba.

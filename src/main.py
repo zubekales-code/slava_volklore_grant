@@ -22,6 +22,14 @@ logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(mes
 log = logging.getLogger("main")
 
 
+def already_sent_today(st: Storage, now) -> bool:
+    """Byl dnes (pražského dne) už úspěšně odeslaný e-mail? Brání dvojímu odeslání při víc plánovaných bězích."""
+    midnight = now.replace(hour=0, minute=0, second=0, microsecond=0).isoformat()
+    rows = st.select("runs", {"select": "id", "kind": "eq.send", "ok": "is.true",
+                              "started_at": f"gte.{midnight}", "limit": "1"})
+    return bool(rows)
+
+
 def run(mode: str) -> None:
     settings = load_settings()
     now = prague_now(settings)
@@ -31,6 +39,10 @@ def run(mode: str) -> None:
         ok, why = should_run_now(settings, now)
         print(f"Plán: {why}")
         if not ok:
+            return
+        st = Storage()
+        if already_sent_today(st, now):
+            print("Plán: dnes už se e-mail poslal, tenhle běh se přeskakuje")
             return
         mode = "run-send"
 
